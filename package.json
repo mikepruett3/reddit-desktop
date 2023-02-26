@@ -1,6 +1,7 @@
 {
   "name": "reddit-desktop",
   "version": "1.0.0",
+  "productName": "Reddit Desktop",
   "description": "A simple Reddit Desktop application, built using Electron.js",
   "main": "main.js",
   "scripts": {
@@ -13,13 +14,10 @@
     "url": "https://github.com/mikepruett3/reddit-desktop"
   },
   "keywords": [
-    "reddit",
-    "desktop",
-    "electron",
-    "application",
-    "app"
+    "Electron",
+    "Reddit"
   ],
-  "author": "Mike Pruett",
+  "author": "Mike Pruett <mikepruett3@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
