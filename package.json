@@ -1,13 +1,22 @@
 {
   "name": "reddit-desktop",
   "version": "1.0.0",
-  "description": "t",
+  "description": "A simple Reddit Desktop app, built using Electron.js",
   "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikepruett3/reddit-desktop"
+  },
   "keywords": [
-    "reddit"
+    "reddit",
+    "desktop",
+    "electron",
+    "application",
+    "app"
   ],
   "author": "Mike Pruett",
   "license": "MIT",
