@@ -1,6 +1,6 @@
 // main.js
 
-const { app, shell, BrowserWindow } = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
