@@ -1,7 +1,7 @@
 {
   "name": "reddit-desktop",
   "version": "1.0.0",
-  "description": "A simple Reddit Desktop app, built using Electron.js",
+  "description": "A simple Reddit Desktop application, built using Electron.js",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
