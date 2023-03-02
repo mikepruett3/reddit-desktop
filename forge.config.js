@@ -6,7 +6,10 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        iconUrl: __dirname + '/images/Reddit.ico',
+        setupIcon: __dirname + '/images/Reddit.ico'
+      },
     },
     {
       name: '@electron-forge/maker-zip',

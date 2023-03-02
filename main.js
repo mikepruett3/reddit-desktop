@@ -1,5 +1,7 @@
 // main.js
 
+if (require('electron-squirrel-startup')) return;
+
 const { app, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
