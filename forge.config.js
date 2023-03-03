@@ -8,7 +8,7 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         iconUrl: __dirname + '/images/Reddit.ico',
-        setupIcon: __dirname + '/images/Reddit.ico'
+        setupIcon: './images/Reddit.ico'
       },
     },
     {

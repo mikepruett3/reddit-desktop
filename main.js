@@ -1,5 +1,6 @@
 // main.js
 
+// https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
 const { app, BrowserWindow } = require('electron');
@@ -16,7 +17,7 @@ createWindow = () => {
         icon: __dirname + '/images/Reddit.ico',
         autoHideMenuBar: true,
         webPreferences: {
-            contextIsolation: true,
+            contextIsolation: false,
             webviewTag: true,
             nodeIntegration: true,
             nativeWindowOpen: true,
