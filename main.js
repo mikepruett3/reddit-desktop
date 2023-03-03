@@ -3,28 +3,36 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
-const { app, BrowserWindow } = require('electron');
+const { app, shell, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
 app.disableHardwareAcceleration()
 
 createWindow = () => {
-    const win = new BrowserWindow({
+    const window = new BrowserWindow({
         width: 1280,
         height: 720,
         title: 'Reddit Desktop',
         icon: __dirname + '/images/Reddit.ico',
         autoHideMenuBar: true,
         webPreferences: {
+            webSecurity: true,
             contextIsolation: false,
             webviewTag: true,
             nodeIntegration: true,
-            nativeWindowOpen: true,
+            nativeWindowOpen: true
         }
     });
 
-    win.loadURL(`https://reddit.com/`);
+    // Open links with External Browser
+    // https://stackoverflow.com/a/67409223
+    window.webContents.setWindowOpenHandler(({ url }) => {
+        shell.openExternal(url);
+        return { action: 'deny' };
+    });
+
+    window.loadURL(`https://reddit.com/`);
 };
 
 app.whenReady().then(() => {
