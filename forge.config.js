@@ -1,6 +1,6 @@
 module.exports = {
   packagerConfig: {
-    //exectableName: "reddit-desktop",
+    exectableName: "reddit-desktop",
     icon: __dirname + '/images/Reddit'
   },
   rebuildConfig: {},
@@ -30,7 +30,7 @@ module.exports = {
       config: {
         options: {
           //name: "reddit-desktop",
-          productName: "reddit-desktop"
+          //productName: "reddit-desktop"
         }
       },
     },
