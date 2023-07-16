@@ -24,12 +24,26 @@
     "url": "https://github.com/mikepruett3/reddit-desktop/issues"
   },
   "homepage": "https://github.com/mikepruett3/reddit-desktop#readme",
+  "forge": {
+    "publishers": [
+      {
+        "name": "@electron-forge/publisher-github",
+        "config": {
+          "repository": {
+            "owner": "mikepruett3",
+            "name": "reddit-desktop"
+          }
+        }
+      }
+    ]
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
     "@electron-forge/maker-deb": "^6.0.5",
     "@electron-forge/maker-rpm": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/publisher-github": "^6.2.1",
     "electron": "^23.1.1"
   },
   "dependencies": {
