@@ -1,6 +1,6 @@
 module.exports = {
   packagerConfig: {
-    exectableName: "reddit-desktop",
+    //exectableName: "reddit-desktop",
     icon: __dirname + '/images/Reddit'
   },
   rebuildConfig: {},
@@ -20,8 +20,8 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          name: "reddit-desktop",
-          productName: "reddit-desktop"
+          //name: "reddit-desktop",
+          //productName: "reddit-desktop"
         }
       },
     },
@@ -29,8 +29,8 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {
         options: {
-          name: "reddit-desktop",
-          productName: "reddit-desktop"
+          //name: "reddit-desktop",
+          //productName: "reddit-desktop"
         }
       },
     },
