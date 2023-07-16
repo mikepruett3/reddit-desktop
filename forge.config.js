@@ -1,5 +1,6 @@
 module.exports = {
   packagerConfig: {
+    exectableName: 'reddit-desktop',
     icon: __dirname + '/images/Reddit'
   },
   rebuildConfig: {},
