@@ -18,15 +18,15 @@ module.exports = {
     {
       name: '@electron-forge/maker-deb',
       config: {
-        exectableName: "reddit-desktop",
-        iconUrl: __dirname + '/images/Reddit.ico'
+        productName: "Reddit-Desktop"
+        //exectableName: "reddit-desktop"
       },
     },
     {
       name: '@electron-forge/maker-rpm',
       config: {
-        exectableName: "reddit-desktop",
-        iconUrl: __dirname + '/images/Reddit.png'
+        productName: "Reddit-Desktop"
+        //exectableName: "reddit-desktop"
       },
     },
   ],
