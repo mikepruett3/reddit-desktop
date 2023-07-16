@@ -21,7 +21,7 @@ module.exports = {
       config: {
         options: {
           //name: "reddit-desktop",
-          //productName: "reddit-desktop"
+          productName: "reddit-desktop"
         }
       },
     },
@@ -30,7 +30,7 @@ module.exports = {
       config: {
         options: {
           //name: "reddit-desktop",
-          //productName: "reddit-desktop"
+          productName: "reddit-desktop"
         }
       },
     },
