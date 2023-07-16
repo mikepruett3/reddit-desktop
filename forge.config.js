@@ -30,7 +30,8 @@ module.exports = {
         repository: {
           owner: 'mikepruett3',
           name: 'reddit-desktop'
-        }
+        },
+        authToken: process.env.GITHUB_TOKEN
       }
     }
   ]
