@@ -12,7 +12,7 @@
   },
   "build": {
     "linux": {
-      "artifactName": "reddit-desktop-${version}.${ext}",
+      "productName": "reddit-desktop",
       "exectableName": "reddit-desktop"
     }
   },
