@@ -17,11 +17,17 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        exectableName: "reddit-desktop",
+        iconUrl: __dirname + '/images/Reddit.ico'
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        exectableName: "reddit-desktop",
+        iconUrl: __dirname + '/images/Reddit.png'
+      },
     },
   ],
 };
