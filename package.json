@@ -8,7 +8,8 @@
     "test": "electron .",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,10 @@
     "Electron",
     "Reddit"
   ],
-  "author": "Mike Pruett <mikepruett3@gmail.com>",
+  "author": {
+    "name": "Mike Pruett",
+    "email": "mikepruett3@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikepruett3/reddit-desktop/issues"
