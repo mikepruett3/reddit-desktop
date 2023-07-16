@@ -18,14 +18,19 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      //config: {
-      //  options: {
-      //    productName: 'reddit-desktop'
-      //  },
-      //},
+      config: {
+        options: {
+          productName: 'reddit-desktop'
+        },
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
+      config: {
+        options: {
+          productName: 'reddit-desktop'
+        },
+      },
     },
   ],
 }
