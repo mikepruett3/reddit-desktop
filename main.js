@@ -3,6 +3,7 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
+//const { app, shell, BrowserWindow, Menu, MenuItem } = require('electron');
 const { app, shell, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
@@ -17,6 +18,7 @@ createWindow = () => {
         icon: __dirname + '/images/Reddit.ico',
         autoHideMenuBar: true,
         webPreferences: {
+            spellcheck: true,
             webSecurity: true,
             contextIsolation: false,
             webviewTag: true,
@@ -33,6 +35,36 @@ createWindow = () => {
     });
 
     window.loadURL(`https://reddit.com/`);
+
+    // Sets the spellchecker to check English US and French
+    window.webContents.session.setSpellCheckerLanguages(['en-US'])
+
+    // An array of all available language codes
+    const possibleLanguages = window.webContents.session.availableSpellCheckerLanguages
+
+    window.webContents.on('context-menu', (event, params) => {
+        const menu = new Menu()
+
+        // Add each spelling suggestion
+        for (const suggestion of params.dictionarySuggestions) {
+            menu.append(new MenuItem({
+                label: suggestion,
+                click: () => window.webContents.replaceMisspelling(suggestion)
+            }))
+        }
+
+        // Allow users to add the misspelled word to the dictionary
+        if (params.misspelledWord) {
+            menu.append(
+                new MenuItem({
+                    label: 'Add to dictionary',
+                    click: () => window.webContents.session.addWordToSpellCheckerDictionary(params.misspelledWord)
+                })
+            )
+        }
+
+        menu.popup()
+    })
 };
 
 app.whenReady().then(() => {
