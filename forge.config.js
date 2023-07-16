@@ -1,6 +1,6 @@
 module.exports = {
   packagerConfig: {
-    name: "Reddit-Desktop",
+    name: "reddit-desktop",
     exectableName: "reddit-desktop",
     icon: __dirname + '/images/Reddit'
   },
@@ -9,6 +9,8 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
+        exe: 'Reddit Desktop',
+        name: 'Reddit Desktop',
         iconUrl: __dirname + '/images/Reddit.ico',
         setupIcon: './images/Reddit.ico'
       },
