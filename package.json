@@ -11,8 +11,8 @@
     "make": "electron-forge make"
   },
   "build": {
-    "productName": "reddit-desktop",
     "linux": {
+      "productName": "reddit-desktop11",
       "exectableName": "reddit-desktop1"
     }
   },
