@@ -22,5 +22,16 @@ module.exports = {
     {
       name: '@electron-forge/maker-rpm'
     }
+  ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'mikepruett3',
+          name: 'reddit-desktop'
+        }
+      }
+    }
   ]
 }
