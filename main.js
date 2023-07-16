@@ -3,8 +3,7 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
-//const { app, shell, BrowserWindow, Menu, MenuItem } = require('electron');
-const { app, shell, BrowserWindow } = require('electron');
+const { app, shell, BrowserWindow, Menu, MenuItem } = require('electron');
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
