@@ -21,8 +21,8 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          name: 'reddit-desktop',
-          productName: 'reddit-desktop'
+          productName: 'reddit-desktop',
+          name: 'reddit-desktop'
         }
       },
     },
@@ -30,8 +30,8 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {
         options: {
-          name: 'reddit-desktop',
-          productName: 'reddit-desktop'
+          productName: 'reddit-desktop',
+          name: 'reddit-desktop'
         }
       },
     },
