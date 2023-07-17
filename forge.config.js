@@ -31,7 +31,8 @@ module.exports = {
           owner: 'mikepruett3',
           name: 'reddit-desktop'
         },
-        authToken: process.env.GITHUB_TOKEN
+        prerelease: false,
+        draft: true
       }
     }
   ]
