@@ -11,6 +11,7 @@ For Windows... a standard Exectuable is provided, as well as a NuGet package.
 ## Features
 
 - Spell Check
+- Control for Hardware Acceleration
 
 ## Launching
 
@@ -46,4 +47,5 @@ npm run make
 - electron-squirrel-startup
 - publisher-github
 - electron-forge
+- electron-storage
 - electron

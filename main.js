@@ -3,11 +3,14 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
-const { app, shell, BrowserWindow, Menu, MenuItem } = require('electron');
+const { app, shell, BrowserWindow, Menu, MenuItem, Tray, nativeImage, dialog } = require('electron');
+const { getHA, setHA } = require('./settings.js');
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
-app.disableHardwareAcceleration()
+if (!getHA()) {
+    app.disableHardwareAcceleration()
+}
 
 createWindow = () => {
     const window = new BrowserWindow({
@@ -24,22 +27,16 @@ createWindow = () => {
             nodeIntegration: true,
             nativeWindowOpen: true
         }
-    });
+    })
+
+    window.loadURL(`https://reddit.com/`);
 
     // Open links with External Browser
     // https://stackoverflow.com/a/67409223
     window.webContents.setWindowOpenHandler(({ url }) => {
         shell.openExternal(url);
         return { action: 'deny' };
-    });
-
-    window.loadURL(`https://reddit.com/`);
-
-    // Sets the spellchecker to check English US and French
-    window.webContents.session.setSpellCheckerLanguages(['en-US'])
-
-    // An array of all available language codes
-    const possibleLanguages = window.webContents.session.availableSpellCheckerLanguages
+    })
 
     window.webContents.on('context-menu', (event, params) => {
         const menu = new Menu()
@@ -64,20 +61,70 @@ createWindow = () => {
 
         menu.popup()
     })
-};
+
+    const icon = nativeImage.createFromPath(__dirname + '/images/Reddit.ico')
+    const tray = new Tray(icon)
+
+    const contextMenu = Menu.buildFromTemplate([
+        {
+            label: 'Hardware Acceleration',
+            type: 'checkbox',
+            checked: getHA(),
+            click({ checked }) {
+                setHA(checked)
+                dialog.showMessageBox(
+                    null,
+                    {
+                        type: 'info',
+                        title: 'info',
+                        message: 'Exiting Applicatiom, as Hardware Acceleration setting has been changed...'
+
+                    })
+                    .then(result => {
+                      if (result.response === 0) {
+                        app.relaunch();
+                        app.exit()
+                      }
+                    }
+                );
+            }
+        },
+        {
+            label: 'Clear Cache',
+            click: () => {
+                session.defaultSession.clearStorageData()
+                app.relaunch();
+                app.exit();
+            }
+        },
+        {
+            label: 'Reload',
+            click: () => win.reload()
+        },
+        {
+            label: 'Quit',
+            type: 'normal',
+            role: 'quit'
+        }
+    ])
+
+    tray.setToolTip('Reddit Desktop')
+    tray.setTitle('Reddit Desktop')
+    tray.setContextMenu(contextMenu)
+}
 
 app.whenReady().then(() => {
-    createWindow();
+    createWindow()
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow();
+            createWindow()
         }
-    });
-});
+    })
+})
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit();
+        app.quit()
     }
-});
+})

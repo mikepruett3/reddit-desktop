@@ -1,5 +1,6 @@
 module.exports = {
   packagerConfig: {
+    asar: true,
     executableName: 'reddit-desktop',
     icon: __dirname + '/images/Reddit'
   },
@@ -8,7 +9,7 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        iconUrl: __dirname + '/images/Reddit.ico',
+        iconUrl: 'https://raw.githubusercontent.com/mikepruett3/reddit-desktop/main/images/Reddit.ico',
         setupIcon: './images/Reddit.ico'
       },
     },
@@ -30,10 +31,14 @@ module.exports = {
         repository: {
           owner: 'mikepruett3',
           name: 'reddit-desktop'
-        },
-        prerelease: false,
-        draft: true
+        }
       }
     }
-  ]
+  ],
+  plugins: [
+    {
+      name: '@electron-forge/plugin-auto-unpack-natives',
+      config: {},
+    },
+  ],
 }
