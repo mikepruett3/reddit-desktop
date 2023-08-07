@@ -4,7 +4,7 @@ Reddit Desktop is a simple Desktop application, built using [ElectronJS](https:/
 
 ## Installation
 
-Dowload the lates [release](https://github.com/mikepruett3/reddit-desktop/releases) for Windows. Unfortunatley I am not able to provide packages for Linux or MacOS at this time.
+Dowload the latest [release](https://github.com/mikepruett3/reddit-desktop/releases) ffor Windows, Linux and MacOS.
 
 For Windows... a standard Exectuable is provided, as well as a NuGet package.
 
